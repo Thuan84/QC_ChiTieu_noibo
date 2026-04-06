@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>Infographic Quy chế Chi tiêu nội bộ 2026</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Times New Roman',Times,serif; background:#f5efe8; width:100%; min-width:960px; overflow-x:auto; }
+.page { width:1240px; min-height:820px; margin:0 auto; background:#fff; display:grid; grid-template-rows:64px auto 28px; }
+
+/* HEADER */
+.header { background:linear-gradient(135deg,#5a1a00 0%,#8a3a0a 50%,#6a2a40 100%); display:flex; align-items:center; padding:0 18px; gap:14px; border-bottom:3px solid #c5a028; }
+.hdr-emblem { width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.4);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0; }
+.hdr-main { flex:1; }
+.hdr-title { font-size:17px;font-weight:700;color:#fff;line-height:1.15; }
+.hdr-sub   { font-size:10px;color:#f5d0a8;font-style:italic;margin-top:2px; }
+.hdr-pills { display:flex;flex-direction:column;gap:4px;align-items:flex-end; }
+.hdr-pill  { background:rgba(197,160,40,0.25);border:1px solid rgba(197,160,40,0.6);color:#ffe08a;font-size:10px;font-weight:700;padding:3px 10px;border-radius:3px;white-space:nowrap; }
+
+/* BODY */
+.body { display:grid; grid-template-columns:280px 270px 1fr 215px; overflow:visible; align-items:start; }
+.col { padding:10px; border-right:1px solid #e0d0c0; display:flex; flex-direction:column; gap:7px; }
+.col:last-child { border-right:none; }
+
+/* SECTION HEADERS */
+.sh { display:flex;align-items:center;gap:7px;padding:5px 9px;border-radius:5px; }
+.sh.brn  { background:#5a1a00; } .sh.org  { background:#8a3a0a; }
+.sh.burg { background:#6a2a40; } .sh.olv  { background:#4a5a10; }
+.sh.teal { background:#0a5a4a; } .sh.navy { background:#1a3a6b; }
+.sh.gold { background:#7a5a00; } .sh.gray { background:#4a4a5a; }
+.sh-icon { font-size:13px; }
+.sh-text { font-size:10px;font-weight:700;color:#fff;line-height:1.2;flex:1; }
+.sh-art  { font-size:8.5px;color:rgba(255,255,255,0.6);font-style:italic;white-space:nowrap; }
+
+/* TABLES */
+.gt { width:100%;border-collapse:collapse;font-size:8.5px; }
+.gt th { padding:3px 4px;font-size:8px;font-weight:700;color:#fff;text-align:center; }
+.gt td { border:1px solid #d8c8b8;padding:2.5px 4px;vertical-align:middle;line-height:1.3;color:#2a1808; }
+.gt tr:nth-child(even) td { background:#faf5f0; }
+.gt td:first-child { font-weight:700;color:#5a1a00; }
+.gt.brn th  { background:#5a1a00; } .gt.org th  { background:#8a3a0a; }
+.gt.burg th { background:#6a2a40; } .gt.olv th  { background:#4a5a10; }
+.gt.teal th { background:#0a5a4a; } .gt.navy th { background:#1a3a6b; }
+.gt.gold th { background:#7a5a00; } .gt.gray th { background:#4a4a5a; }
+
+/* LIST */
+.rl { display:flex;flex-direction:column;gap:3px; }
+.ri { display:flex;gap:5px;align-items:flex-start;padding:4px 7px;border-radius:4px;border-left:3px solid #8a3a0a;background:#faf5f0; }
+.ri-icon { font-size:11px;flex-shrink:0; }
+.ri-text { font-size:8.5px;color:#2a1808;line-height:1.4; }
+.ri.g { border-left-color:#0a5a4a; background:#f0f8f5; }
+.ri.g .ri-text { color:#0a2a1a; }
+.ri.b { border-left-color:#1a3a6b; background:#f0f5fb; }
+.ri.b .ri-text { color:#1a2838; }
+
+/* NOTE */
+.note  { background:#fffbe8;border:1px solid #d4c060;border-radius:3px;padding:4px 7px;font-size:8.5px;color:#3a2800;line-height:1.45; }
+.note-r{ background:#fef5f0;border:1px solid #d08060;border-radius:3px;padding:4px 7px;font-size:8.5px;color:#3a1a00;line-height:1.45; }
+
+/* STAT */
+.stat-row { display:flex;gap:4px; }
+.sb { flex:1;border-radius:5px;padding:6px 5px;text-align:center; }
+.sb.brn  { background:#faf0e8;border:1px solid #c89870; } .sb.org  { background:#fdf0e8;border:1px solid #d4a060; }
+.sb.burg { background:#faf0f5;border:1px solid #c890a8; } .sb.olv  { background:#f5faf0;border:1px solid #9ab870; }
+.sb.teal { background:#e8f8f5;border:1px solid #70c8b8; } .sb.navy { background:#e8f0f8;border:1px solid #90b8d8; }
+.sb-num  { font-size:18px;font-weight:700;line-height:1; }
+.sb-unit { font-size:8px;font-style:italic;color:#5a4030; }
+.sb-desc { font-size:8px;color:#4a3020;margin-top:2px;line-height:1.3; }
+.sb.brn .sb-num  { color:#5a1a00; } .sb.org .sb-num  { color:#8a3a0a; }
+.sb.burg .sb-num { color:#6a2a40; } .sb.olv .sb-num  { color:#4a5a10; }
+.sb.teal .sb-num { color:#0a5a4a; } .sb.navy .sb-num { color:#1a3a6b; }
+
+/* GRID */
+.pg { display:grid;grid-template-columns:1fr 1fr;gap:4px; }
+.pi { display:flex;gap:5px;align-items:flex-start;background:#faf5f0;border:1px solid #d8c0a0;border-radius:4px;padding:4px 6px; }
+.pi-num { width:16px;height:16px;background:#5a1a00;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:8.5px;font-weight:700;flex-shrink:0;margin-top:1px; }
+.pi-text { font-size:9px;color:#2a1808;line-height:1.3;font-weight:600; }
+
+/* AUTH */
+.auth-box { background:#faf5f0;border:1px solid #d8c0a0;border-radius:5px;padding:6px 8px; }
+.auth-row { display:flex;gap:6px;margin-bottom:5px;align-items:flex-start; }
+.auth-row:last-child { margin-bottom:0; }
+.auth-icon { font-size:15px;flex-shrink:0;margin-top:1px; }
+.auth-title { font-size:9px;font-weight:700;color:#5a1a00;margin-bottom:2px; }
+.auth-desc  { font-size:8.5px;color:#3a2810;line-height:1.4; }
+
+/* TRANSIT */
+.tr-list { display:flex;flex-direction:column;gap:3px; }
+.tr-item { display:flex;gap:5px;align-items:flex-start;padding:4px 7px;background:#fdf5e0;border-left:3px solid #c5a028;border-radius:0 4px 4px 0;font-size:8.5px;color:#3a2a00;line-height:1.4; }
+.tr-icon { flex-shrink:0;font-size:10px; }
+
+/* MONEY */
+.money { font-weight:700;color:#8a1a00; }
+
+/* ELEC */
+.elec-box { background:linear-gradient(135deg,#faf0e8,#f5e0d0);border:1px solid #c89060;border-radius:5px;padding:6px 8px;display:flex;gap:7px;align-items:flex-start; }
+.elec-icon { font-size:18px;flex-shrink:0; }
+.elec-title { font-size:9px;font-weight:700;color:#5a1a00;margin-bottom:2px; }
+.elec-desc  { font-size:8.5px;color:#3a1808;line-height:1.4; }
+
+/* PCT */
+.pct { font-size:8px;font-weight:700;color:#5a1a00;padding:2px 5px;background:#f0d8c0;border-radius:3px;margin-bottom:3px; }
+
+/* FOOTER */
+.footer { background:#5a1a00;display:flex;align-items:center;justify-content:space-between;padding:0 18px;font-size:8.5px;color:rgba(255,255,255,0.45);font-style:italic; }
+.footer strong { color:rgba(255,255,255,0.8);font-style:normal; }
+
+/* ══ ZOOM MODAL ══ */
+.zoomable { cursor:zoom-in;position:relative;transition:outline 0.15s; }
+.zoomable:hover { outline:2px dashed rgba(197,160,40,0.8);outline-offset:3px; }
+.zoomable:hover::after { content:'🔍 Click để phóng to';position:absolute;top:3px;right:5px;background:rgba(90,26,0,0.88);color:#ffe08a;font-size:9.5px;font-weight:700;font-family:'Times New Roman',serif;padding:2px 8px;border-radius:10px;pointer-events:none;white-space:nowrap;z-index:10; }
+#zx-backdrop { display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:9990;backdrop-filter:blur(3px); }
+#zx-modal { position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:9995;background:#fff;border-radius:14px;box-shadow:0 8px 48px rgba(0,0,0,0.45);width:auto;max-width:min(96vw,1100px);max-height:90vh;box-sizing:border-box;display:none;flex-direction:column;animation:zx-pop 0.2s cubic-bezier(.34,1.56,.64,1) forwards; }
+@keyframes zx-pop { from{opacity:0;transform:translate(-50%,-50%) scale(0.88);}to{opacity:1;transform:translate(-50%,-50%) scale(1);} }
+@media(max-width:600px){ #zx-modal{width:100vw!important;max-width:100vw!important;max-height:92vh;border-radius:14px 14px 0 0;top:auto!important;bottom:0!important;left:0!important;transform:none!important;} }
+#zx-titlebar { display:flex;align-items:center;justify-content:space-between;padding:12px 16px 10px;border-bottom:2px solid #f0e0d0;flex-shrink:0; }
+#zx-title { font-family:'Times New Roman',serif;font-size:14px;font-weight:700;color:#5a1a00;flex:1;margin-right:12px; }
+#zx-close { cursor:pointer;width:28px;height:28px;border-radius:50%;background:#f8f0e8;border:none;font-size:15px;line-height:28px;text-align:center;flex-shrink:0; }
+#zx-close:hover { background:#f0d8c0; }
+#zx-scroll { overflow:auto;-webkit-overflow-scrolling:touch;padding:16px;flex:1;min-width:0; }
+#zx-inner { display:inline-block;min-width:100%;box-sizing:border-box;font-family:'Times New Roman',serif; }
+@media(max-width:600px){ #zx-inner{min-width:unset;width:100%;display:block;} }
+#zx-inner table { width:100%;min-width:max-content;border-collapse:collapse;font-size:13px; }
+#zx-inner table th { padding:7px 10px;font-size:11.5px;font-weight:700;color:#fff;text-align:center; }
+#zx-inner table td { border:1px solid #d8c8b8;padding:7px 10px;vertical-align:middle;line-height:1.5;color:#2a1808;font-size:12.5px; }
+#zx-inner table tr:nth-child(even) td { background:#faf5f0; }
+#zx-inner table td:first-child { font-weight:700;color:#5a1a00; }
+#zx-inner .gt.brn th { background:#5a1a00; } #zx-inner .gt.org th { background:#8a3a0a; }
+#zx-inner .gt.burg th{ background:#6a2a40; } #zx-inner .gt.olv th { background:#4a5a10; }
+#zx-inner .gt.teal th{ background:#0a5a4a; } #zx-inner .gt.navy th{ background:#1a3a6b; }
+#zx-inner .gt.gold th{ background:#7a5a00; } #zx-inner .gt.gray th{ background:#4a4a5a; }
+#zx-inner .rl { display:flex;flex-direction:column;gap:6px; }
+#zx-inner .ri { display:flex;gap:8px;align-items:flex-start;padding:8px 10px;border-radius:5px;border-left:3px solid #8a3a0a;background:#faf5f0;margin-bottom:0; }
+#zx-inner .ri.g { border-left-color:#0a5a4a;background:#f0f8f5; }
+#zx-inner .ri.b { border-left-color:#1a3a6b;background:#f0f5fb; }
+#zx-inner .ri-icon { font-size:14px;flex-shrink:0; }
+#zx-inner .ri-text { font-size:13px;line-height:1.55;color:#2a1808; }
+#zx-inner .stat-row { display:flex;gap:10px; }
+#zx-inner .sb { flex:1;border-radius:7px;padding:12px 10px;text-align:center; }
+#zx-inner .sb-num { font-size:30px;font-weight:700;line-height:1; }
+#zx-inner .sb-unit { font-size:11px;font-style:italic; }
+#zx-inner .sb-desc { font-size:11.5px;margin-top:4px;line-height:1.35; }
+#zx-inner .sb.brn { background:#faf0e8;border:1px solid #c89870; } #zx-inner .sb.brn .sb-num { color:#5a1a00; }
+#zx-inner .sb.org { background:#fdf0e8;border:1px solid #d4a060; } #zx-inner .sb.org .sb-num { color:#8a3a0a; }
+#zx-inner .sb.burg{ background:#faf0f5;border:1px solid #c890a8; } #zx-inner .sb.burg .sb-num { color:#6a2a40; }
+#zx-inner .sb.olv { background:#f5faf0;border:1px solid #9ab870; } #zx-inner .sb.olv .sb-num { color:#4a5a10; }
+#zx-inner .sb.teal{ background:#e8f8f5;border:1px solid #70c8b8; } #zx-inner .sb.teal .sb-num { color:#0a5a4a; }
+#zx-inner .sb.navy{ background:#e8f0f8;border:1px solid #90b8d8; } #zx-inner .sb.navy .sb-num { color:#1a3a6b; }
+#zx-inner .auth-box { background:#faf5f0;border:1px solid #d8c0a0;border-radius:6px;padding:10px 12px; }
+#zx-inner .auth-row { display:flex;gap:10px;margin-bottom:8px;align-items:flex-start; }
+#zx-inner .auth-row:last-child { margin-bottom:0; }
+#zx-inner .auth-icon { font-size:20px;flex-shrink:0; }
+#zx-inner .auth-title { font-size:13px;font-weight:700;color:#5a1a00;margin-bottom:3px; }
+#zx-inner .auth-desc  { font-size:12px;color:#3a2810;line-height:1.5; }
+#zx-inner .note  { background:#fffbe8;border:1px solid #d4c060;border-radius:4px;padding:8px 10px;font-size:12px;color:#3a2800;line-height:1.5; }
+#zx-inner .note-r{ background:#fef5f0;border:1px solid #d08060;border-radius:4px;padding:8px 10px;font-size:12px;color:#3a1a00;line-height:1.5; }
+#zx-inner .pg { display:grid;grid-template-columns:1fr 1fr;gap:8px; }
+#zx-inner .pi { display:flex;gap:8px;align-items:flex-start;background:#faf5f0;border:1px solid #d8c0a0;border-radius:5px;padding:8px 10px; }
+#zx-inner .pi-num { width:22px;height:22px;background:#5a1a00;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0; }
+#zx-inner .pi-text { font-size:13px;line-height:1.4; }
+#zx-inner .tr-list { display:flex;flex-direction:column;gap:5px; }
+#zx-inner .tr-item { display:flex;gap:7px;align-items:flex-start;padding:7px 10px;background:#fdf5e0;border-left:3px solid #c5a028;border-radius:0 5px 5px 0;font-size:12px;color:#3a2a00;line-height:1.5; }
+#zx-inner .tr-icon { font-size:13px;flex-shrink:0; }
+#zx-inner .elec-box { background:linear-gradient(135deg,#faf0e8,#f5e0d0);border:1px solid #c89060;border-radius:6px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start; }
+#zx-inner .elec-icon { font-size:26px;flex-shrink:0; }
+#zx-inner .elec-title { font-size:13px;font-weight:700;color:#5a1a00;margin-bottom:4px; }
+#zx-inner .elec-desc  { font-size:12px;color:#3a1808;line-height:1.5; }
+#zx-inner .pct { font-size:11px;font-weight:700;color:#5a1a00;padding:3px 7px;background:#f0d8c0;border-radius:3px;margin-bottom:5px; }
+#zx-inner .money { font-weight:700;color:#8a1a00; }
+#zx-zoombar { display:flex;align-items:center;justify-content:center;gap:10px;padding:10px 16px;border-top:1px solid #f0e0d0;flex-shrink:0;background:#fdf8f5; }
+.zxb { cursor:pointer;padding:4px 14px;border-radius:16px;border:1px solid #c89870;background:#faf0e8;font-family:'Times New Roman',serif;font-size:13px;color:#5a1a00;font-weight:700;transition:background 0.15s; }
+.zxb:hover { background:#f0d8c0; }
+#zx-scale { font-family:'Times New Roman',serif;font-size:12px;color:#8a6a50;min-width:44px;text-align:center; }
+#zx-hint { position:fixed;bottom:14px;left:50%;transform:translateX(-50%);background:rgba(90,26,0,0.88);color:#fff;font-family:'Times New Roman',serif;font-size:12px;padding:6px 16px;border-radius:20px;z-index:9989;pointer-events:none;transition:opacity 0.5s;white-space:nowrap;box-shadow:0 2px 10px rgba(0,0,0,0.25); }
+#zx-hint.hidden { opacity:0; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HEADER -->
+<div class="header">
+  <div class="hdr-emblem">💰</div>
+  <div class="hdr-main">
+    <div class="hdr-title">QUY CHẾ CHI TIÊU NỘI BỘ — CÔNG TY TNHH MTV KHAI THÁC CÔNG TRÌNH THỦY LỢI NINH THUẬN</div>
+    <div class="hdr-sub">Ban hành kèm theo Quyết định số .../QĐ-CTKTTL ngày 06/04/2026 · Chủ tịch Công ty: Nguyễn Công Xưng · Thông qua Hội nghị Người lao động năm 2026</div>
+  </div>
+  <div class="hdr-pills">
+    <div class="hdr-pill">📌 10 Chương · 38 Điều · Hiệu lực 06/04/2026</div>
+    <div class="hdr-pill">📎 Bãi bỏ QĐ 41/2024 · QĐ 49/2025 · QĐ 178/2025 · QĐ 201/2025</div>
+  </div>
+</div>
+
+<div class="body">
+
+<!-- ══ CỘT 1: CHƯƠNG 1 + CHƯƠNG 2 ══ -->
+<div class="col">
+
+  <div class="sh brn"><span class="sh-icon">📜</span><span class="sh-text">CHƯƠNG 1 — QUY ĐỊNH CHUNG</span><span class="sh-art">Điều 1–3</span></div>
+  <div class="rl">
+    <div class="ri"><span class="ri-icon">🎯</span><div class="ri-text"><strong>Phạm vi:</strong> Quy định chi tiêu nội bộ cho Người quản lý DN, Kiểm soát viên và Người lao động đang làm việc tại Công ty.</div></div>
+    <div class="ri"><span class="ri-icon">⚖️</span><div class="ri-text"><strong>Nguyên tắc:</strong> Công bằng, minh bạch; mức chi <strong>không vượt tiêu chuẩn nhà nước</strong>; đủ hóa đơn chứng từ; phù hợp khả năng tài chính Công ty.</div></div>
+    <div class="ri"><span class="ri-icon">🎯</span><div class="ri-text"><strong>Mục đích:</strong> Tự chủ quản lý kinh phí, thực hành tiết kiệm, chống lãng phí, bảo vệ quyền lợi NLĐ.</div></div>
+  </div>
+
+  <div class="sh org"><span class="sh-icon">✈️</span><span class="sh-text">CHƯƠNG 2 — CHI CÔNG TÁC PHÍ & ĂN CA</span><span class="sh-art">Điều 4–8</span></div>
+
+  <div class="pct">📋 Phụ cấp lưu trú (Điều 5)</div>
+  <table class="gt brn">
+    <thead><tr><th>Loại công tác</th><th>Đối tượng / Điều kiện</th><th>Mức chi</th></tr></thead>
+    <tbody>
+      <tr><td>Ngoài tỉnh</td><td>Tất cả NLĐ được cử đi công tác</td><td><span class="money">200.000 đ/ngày</span></td></tr>
+      <tr><td>Trong tỉnh ≥15km &lt;100km</td><td>Khối VP Công ty (giám sát CT), phương tiện tự túc</td><td><span class="money">40.000 đ/ngày</span></td></tr>
+      <tr><td>Trong tỉnh ≥100km hoặc >4h</td><td>Di chuyển liên tục trên 04 giờ</td><td><span class="money">200.000 đ/ngày</span></td></tr>
+      <tr><td>Cán bộ địa phương phối hợp</td><td>Khi có QĐ của Giám đốc</td><td><span class="money">40.000 đ/ngày (tối đa 300.000 đ/tháng)</span></td></tr>
+    </tbody>
+  </table>
+
+  <div class="pct">📋 Thuê phòng nghỉ ngoài tỉnh (Điều 6)</div>
+  <table class="gt brn">
+    <thead><tr><th>Đối tượng</th><th>Thành phố lớn (TP TW, đô thị I)</th><th>Vùng còn lại</th></tr></thead>
+    <tbody>
+      <tr><td>CT, KSV, BGĐ, KTT (1 người/phòng)</td><td><span class="money">≤ 900.000 đ/phòng/ngày</span></td><td><span class="money">≤ 600.000 đ/phòng/ngày</span></td></tr>
+      <tr><td>Các thành phần khác (2 người/phòng)</td><td><span class="money">≤ 800.000 đ/phòng/ngày</span></td><td><span class="money">≤ 600.000 đ/phòng/ngày</span></td></tr>
+    </tbody>
+  </table>
+
+  <div class="pct">📋 Công tác phí khoán tháng & ăn ca (Điều 7)</div>
+  <table class="gt brn">
+    <thead><tr><th>Đối tượng</th><th>Công tác phí/tháng</th></tr></thead>
+    <tbody>
+      <tr><td>CT, KSV, GĐ, PGĐ, KTT, TP KSNB, Trưởng phòng, Trạm trưởng</td><td><span class="money">400.000 đ</span></td></tr>
+      <tr><td>Cấp phó các phòng, Trạm phó</td><td><span class="money">350.000 đ</span></td></tr>
+      <tr><td>Các đối tượng còn lại (>10 ngày CT/tháng)</td><td><span class="money">300.000 đ</span></td></tr>
+    </tbody>
+  </table>
+  <div class="note">🍚 <strong>Tiền ăn ca (Điều 7):</strong> <span class="money">1.000.000 đồng/người/tháng</span> — áp dụng cho toàn bộ NLĐ và người quản lý. | 📋 <strong>Chứng từ (Điều 8):</strong> Giấy đi đường có đóng dấu xác nhận + văn bản/kế hoạch được LĐ phê duyệt + hóa đơn vé + hóa đơn thuê phòng.</div>
+
+  <div class="stat-row">
+    <div class="sb brn"><div class="sb-num">200K</div><div class="sb-unit">đ/ngày</div><div class="sb-desc">Lưu trú ngoài tỉnh</div></div>
+    <div class="sb org"><div class="sb-num">900K</div><div class="sb-unit">đ/phòng/ngày</div><div class="sb-desc">Thuê phòng tối đa (LĐ, TP lớn)</div></div>
+    <div class="sb burg"><div class="sb-num">1tr</div><div class="sb-unit">đ/tháng</div><div class="sb-desc">Tiền ăn ca/người</div></div>
+  </div>
+
+  <div class="note-r">📌 Chi phí công tác từ <strong>5 triệu đồng trở lên</strong>: NLĐ được thanh toán bằng thẻ ngân hàng cá nhân (xác định là thanh toán không dùng tiền mặt), Công ty hoàn lại sau. Hồ sơ gồm: QĐ cử đi CT + giấy ủy quyền + hóa đơn + chứng từ TT qua NH.</div>
+
+</div><!-- end col 1 -->
+
+
+<!-- ══ CỘT 2: CHƯƠNG 3 + CHƯƠNG 4 ══ -->
+<div class="col">
+
+  <div class="sh burg"><span class="sh-icon">🎤</span><span class="sh-text">CHƯƠNG 3 — CHI HỘI NGHỊ</span><span class="sh-art">Điều 9–11</span></div>
+
+  <table class="gt burg">
+    <thead><tr><th>Khoản chi hội nghị</th><th>Mức chi</th></tr></thead>
+    <tbody>
+      <tr><td>Bồi dưỡng báo cáo viên</td><td><span class="money">≤ 500.000 đ/người</span></td></tr>
+      <tr><td>Giải khát giữa giờ</td><td><span class="money">15.000 đ/buổi/đại biểu</span></td></tr>
+      <tr><td>Đại biểu cấp trên, Sở/Ban/Ngành tham dự HN sơ, tổng kết tại Công ty</td><td><span class="money">200.000 đ/người</span></td></tr>
+      <tr><td>Đại biểu bên ngoài dự HN sơ kết tại địa bàn</td><td><span class="money">120.000 đ/người</span></td></tr>
+      <tr><td>NLĐ, người quản lý Công ty dự HN sơ, tổng kết</td><td><span class="money">120.000 đ/người</span></td></tr>
+      <tr><td>Tổ chức ăn tập trung cho đại biểu</td><td><span class="money">150.000 đ/người</span></td></tr>
+    </tbody>
+  </table>
+
+  <div class="sh olv"><span class="sh-icon">🏢</span><span class="sh-text">CHƯƠNG 4 — CHI THƯỜNG XUYÊN & MUA SẮM CC-DC</span><span class="sh-art">Điều 12–20</span></div>
+
+  <div class="pct">⚡ Điện, nước, nhiên liệu (Điều 12–13)</div>
+  <div class="rl">
+    <div class="ri"><span class="ri-icon">💧</span><div class="ri-text"><strong>Nước sinh hoạt Trạm TN:</strong> khoán <span class="money">20 m³/trạm/tháng</span>; Hồ, nhà quản lý cụm: <span class="money">10 m³/tháng</span>; Hồ Tân Giang, cụm QLC: <span class="money">15 m³/tháng</span>; Nơi không có đồng hồ: <span class="money">30.000 đ/người/tháng</span>.</div></div>
+    <div class="ri"><span class="ri-icon">⛽</span><div class="ri-text"><strong>Định mức nhiên liệu xe:</strong> Ford Everest 7 chỗ: <span class="money">15 lít/100km</span>; Ford Ranger bán tải: <span class="money">13 lít/100km</span>; Toyota Fortuner Legender: <span class="money">13 lít/100km</span>.</div></div>
+    <div class="ri"><span class="ri-icon">🌿</span><div class="ri-text">Máy cắt cỏ: khoán <span class="money">10 lít/tháng/máy</span>. Máy cưa gỗ: <span class="money">4 lít xăng + 1 lít dầu nhớt/quý</span>.</div></div>
+  </div>
+
+  <div class="pct">📑 Văn phòng phẩm, trang phục, đào tạo (Điều 15–17)</div>
+  <table class="gt olv">
+    <thead><tr><th>Khoản chi</th><th>Mức / Điều kiện</th></tr></thead>
+    <tbody>
+      <tr><td>Văn phòng phẩm</td><td>Khoán <span class="money">200.000 đ/người/năm</span> + sổ công tác 1 quyển/2 năm + mực, giấy theo thực tế</td></tr>
+      <tr><td>Trà, nước (Trạm TN)</td><td>Khoán <span class="money">40.000 đ/người/tháng</span></td></tr>
+      <tr><td>Công cụ dụng cụ làm việc</td><td>Khoán <span class="money">300.000 đ/người/2 năm</span></td></tr>
+      <tr><td>Trang phục, bảo hộ (bằng tiền)</td><td>Tối đa <span class="money">5.000.000 đ/người/năm</span></td></tr>
+      <tr><td>Đào tạo ngắn/dài hạn (do Công ty cử)</td><td>Thanh toán toàn bộ học phí (riêng sau ĐH: chỉ hỗ trợ lương + ăn ca)</td></tr>
+      <tr><td>Bồi dưỡng nâng bậc, nghiệp vụ ngắn hạn</td><td><span class="money">30.000 đ/người/ngày</span></td></tr>
+      <tr><td>Giảng viên cấp Sở, ThS, CVC, GVC</td><td><span class="money">1.000.000 đ/người/buổi</span></td></tr>
+    </tbody>
+  </table>
+
+  <div class="pct">🏗️ Quy định về mua sắm CC-DC (Điều 18–19)</div>
+  <div class="rl">
+    <div class="ri"><span class="ri-icon">📏</span><div class="ri-text">Công cụ dụng cụ: nguyên giá <span class="money">&lt; 30 triệu đồng</span>. Thẩm quyền quyết định: <strong>Chủ tịch Công ty hoặc Giám đốc khi được ủy quyền</strong>.</div></div>
+    <div class="ri"><span class="ri-icon">🔧</span><div class="ri-text">Căn cứ mua sắm: nhu cầu thực tế + tình hình tài chính. Thực hiện đúng trình tự, thủ tục pháp luật. Kế toán trưởng tham mưu nguồn kinh phí.</div></div>
+  </div>
+
+  <div class="elec-box">
+    <div class="elec-icon">🏗️</div>
+    <div>
+      <div class="elec-title">Thu % chi phí quản lý CT trong giá thành xây lắp (Điều 20)</div>
+      <div class="elec-desc">Tổng thu <span class="money">7,0%</span> = Chi phí thu nhập chịu thuế tính trước <span class="money">5,5%</span> + Chi phí quản lý CT <span class="money">1,5%</span>. Áp dụng cho các CT tự thực hiện của Công ty.</div>
+    </div>
+  </div>
+
+</div><!-- end col 2 -->
+
+
+<!-- ══ CỘT 3: CHƯƠNG 5 + 6 + 7 ══ -->
+<div class="col">
+
+  <div class="sh teal"><span class="sh-icon">📱</span><span class="sh-text">CHƯƠNG 5 — CHI THÔNG TIN, TUYÊN TRUYỀN, LIÊN LẠC</span><span class="sh-art">Điều 21–27</span></div>
+
+  <div class="pct">📞 Cước điện thoại cá nhân (Điều 23)</div>
+  <table class="gt teal">
+    <thead><tr><th>Đối tượng</th><th>Mức khoán/tháng</th></tr></thead>
+    <tbody>
+      <tr><td>Chủ tịch Công ty, Giám đốc Công ty</td><td><span class="money">500.000 đ</span></td></tr>
+      <tr><td>Kiểm soát viên; Phó Giám đốc; Kế toán trưởng</td><td><span class="money">300.000 đ</span></td></tr>
+      <tr><td>Trưởng phòng/ban; Trạm trưởng TN</td><td><span class="money">220.000 đ</span></td></tr>
+      <tr><td>Phó phòng CM; Trạm phó; Cụm trưởng; Cán bộ phụ trách hồ/đập; Lái xe</td><td><span class="money">150.000 đ</span></td></tr>
+      <tr><td>Cụm phó TN và NLĐ còn lại theo HĐLĐ</td><td><span class="money">100.000 đ</span></td></tr>
+    </tbody>
+  </table>
+
+  <div class="pct">📟 Cước điện thoại cơ quan khoán (Điều 24)</div>
+  <table class="gt teal">
+    <thead><tr><th>Phòng làm việc / Đơn vị</th><th>Mức khoán/tháng</th></tr></thead>
+    <tbody>
+      <tr><td>Chủ tịch CT, Giám đốc CT</td><td><span class="money">500.000 đ</span></td></tr>
+      <tr><td>Kiểm soát viên; Phó GĐ; Kế toán trưởng</td><td><span class="money">200.000 đ</span></td></tr>
+      <tr><td>Ban KSNB; Các phòng chuyên môn</td><td><span class="money">500.000 đ</span></td></tr>
+      <tr><td>Trạm thủy nông (kể cả cước Cụm TN, máy fax)</td><td><span class="money">500.000 đ</span></td></tr>
+    </tbody>
+  </table>
+  <div class="note">📌 <strong>Điều 25:</strong> Cuối năm quyết toán; nếu vượt mức khoán → thu lại từ lương cá nhân được giao khoán và Trưởng bộ phận (nếu tập thể vượt). | 🌐 <strong>Điều 26:</strong> Internet VP: theo thực tế. Trạm TN: gói tối thiểu theo nhà mạng tại nhà làm việc. TV cáp: theo hóa đơn thực tế. | 📢 <strong>Điều 27:</strong> Tiếp khách: theo thực tế được LĐ đồng ý. Phóng viên báo, đài: tối đa <span class="money">200.000 đ/người/lần</span>.</div>
+
+  <div class="sh navy"><span class="sh-icon">🚌</span><span class="sh-text">CHƯƠNG 6 — CHI PHƯƠNG TIỆN ĐI LẠI KHI NGHỈ PHÉP</span><span class="sh-art">Điều 28–29</span></div>
+  <div class="rl">
+    <div class="ri b"><span class="ri-icon">👥</span><div class="ri-text"><strong>Đối tượng:</strong> NLĐ được cấp phép nghỉ năm để thăm vợ/chồng, con, cha mẹ bị ốm đau hoặc chết.</div></div>
+    <div class="ri b"><span class="ri-icon">💳</span><div class="ri-text"><strong>Mức chi:</strong> Theo giá vé tàu/xe phương tiện công cộng phổ biến (tương đương tàu ngồi mềm điều hòa). Tự túc phương tiện hoặc máy bay: được thanh toán tối đa bằng giá vé tàu ngồi mềm cùng thời điểm.</div></div>
+    <div class="ri b"><span class="ri-icon">📋</span><div class="ri-text"><strong>Hồ sơ:</strong> Vé tàu/xe/thẻ máy bay + Giấy nghỉ phép được LĐ cấp có xác nhận địa phương + Đơn xác nhận người thân ốm/chết của chính quyền địa phương/cơ sở y tế. <strong>Chỉ thanh toán 1 lần/năm, trong năm đó.</strong></div></div>
+  </div>
+
+  <div class="sh gold"><span class="sh-icon">🏛️</span><span class="sh-text">CHƯƠNG 7 — HỖ TRỢ ĐẢNG, ĐOÀN THỂ & PHÚC LỢI NLĐ</span><span class="sh-art">Điều 30–32</span></div>
+
+  <div class="pct">🎁 Phúc lợi người lao động (Điều 31)</div>
+  <table class="gt gold">
+    <thead><tr><th>Nội dung phúc lợi</th><th>Mức chi</th></tr></thead>
+    <tbody>
+      <tr><td>Tết thiếu nhi (1/6) và Tết trung thu (15/8 âl) — con NLĐ</td><td><span class="money">120.000 đ/cháu</span></td></tr>
+      <tr><td>Con NLĐ thi đậu đại học</td><td><span class="money">500.000 đ/cháu</span></td></tr>
+      <tr><td>Tham quan du lịch hàng năm (hỗ trợ thêm)</td><td><span class="money">100.000 đ/người</span></td></tr>
+      <tr><td>Phụ cấp hỷ (NLĐ Công ty kết hôn)</td><td><span class="money">1.500.000 đ/TH</span></td></tr>
+      <tr><td>Phụ cấp hỷ (con NLĐ; con NLĐ đã nghỉ hưu)</td><td><span class="money">1.000.000 đ/TH</span></td></tr>
+      <tr><td>Phụ giúp mai táng (NLĐ đang làm việc)</td><td><span class="money">2.000.000 đ/TH</span></td></tr>
+      <tr><td>Phụ giúp mai táng (gia đình NLĐ)</td><td><span class="money">1.000.000 đ/TH</span></td></tr>
+      <tr><td>Trợ cấp khó khăn đột xuất (hỏa hoạn, lũ lụt, bệnh hiểm nghèo)</td><td><span class="money">5.000.000 đ/TH</span></td></tr>
+      <tr><td>Ngày 8/3, 20/10 (nữ); 22/12 (quân nhân, TNXP)</td><td><span class="money">≤ 500.000 đ/người</span></td></tr>
+    </tbody>
+  </table>
+  <div class="note">🎗️ <strong>Thanh tra nhân dân (Điều 32):</strong> Hỗ trợ card điện thoại <span class="money">100.000 đ/người/tháng</span>. Phụ cấp hoạt động theo tình hình SXKD Công ty, do LĐ quyết định. Phải lập dự toán từ đầu năm.</div>
+
+</div><!-- end col 3 -->
+
+
+<!-- ══ CỘT 4: CHƯƠNG 8 + 9 + 10 ══ -->
+<div class="col">
+
+  <div class="sh gray"><span class="sh-icon">🏦</span><span class="sh-text">CHƯƠNG 8 — THANH TOÁN KHÔNG DÙNG TIỀN MẶT</span><span class="sh-art">Điều 33–35</span></div>
+
+  <div class="stat-row">
+    <div class="sb teal"><div class="sb-num">5tr</div><div class="sb-unit">đ trở lên</div><div class="sb-desc">Bắt buộc TTKDTM (kể cả 1 đợt)</div></div>
+    <div class="sb navy"><div class="sb-num">20tr</div><div class="sb-unit">đ trở lên</div><div class="sb-desc">Phải chuyển khoản từ TK Công ty</div></div>
+  </div>
+
+  <div class="rl">
+    <div class="ri b"><span class="ri-icon">🏦</span><div class="ri-text"><strong>Hình thức chấp nhận:</strong> Chuyển khoản NH từ TK Công ty → TK bên bán. Thanh toán qua bên thứ 3 (cần ủy quyền của Chủ tịch CT + chứng từ cả 2 chiều). Thẻ NH cá nhân NLĐ (giao dịch ≥5 triệu, CT hoàn lại sau).</div></div>
+    <div class="ri b"><span class="ri-icon">⚠️</span><div class="ri-text"><strong>Lưu ý quan trọng:</strong> Mua từ cùng 1 nhà CC nhiều lần trong kỳ thuế mà <strong>tổng ≥5 triệu đồng</strong> → vẫn phải có TTKDTM dù mỗi lần &lt;5 triệu.</div></div>
+    <div class="ri b"><span class="ri-icon">📋</span><div class="ri-text">Căn cứ: <strong>Nghị định 181/2025/NĐ-CP ngày 01/7/2025</strong> của Chính phủ và NĐ 52/2024/NĐ-CP về chứng từ TTKDTM.</div></div>
+  </div>
+
+  <div class="sh brn"><span class="sh-icon">📂</span><span class="sh-text">CHƯƠNG 9 — CHI PHÍ HỢP LÝ PHỤC VỤ SP/DV THỦY LỢI</span><span class="sh-art">Điều 36</span></div>
+
+  <div class="pct">Chi phí đặc thù ngành thủy lợi (khoản 6)</div>
+  <div class="pg">
+    <div class="pi"><div class="pi-num">a</div><div class="pi-text">Lập, điều chỉnh quy trình vận hành, bảo trì CT TL</div></div>
+    <div class="pi"><div class="pi-num">b</div><div class="pi-text">Cắm mốc, khôi phục mốc chỉ giới bảo vệ CT TL</div></div>
+    <div class="pi"><div class="pi-num">c</div><div class="pi-text">Lập, điều chỉnh PA ứng phó thiên tai, PA bảo vệ đập/hồ</div></div>
+    <div class="pi"><div class="pi-num">d</div><div class="pi-text">Xây dựng bản đồ ngập lụt vùng hạ du đập, hồ chứa</div></div>
+    <div class="pi"><div class="pi-num">e</div><div class="pi-text">Lập và lưu trữ hồ sơ đập, hồ chứa nước</div></div>
+    <div class="pi"><div class="pi-num">f</div><div class="pi-text">Lắp đặt thiết bị quan trắc CT đập, hồ chứa nước</div></div>
+    <div class="pi"><div class="pi-num">g</div><div class="pi-text">Hệ thống quan trắc KT-TV, giám sát vận hành, cảnh báo an toàn đập</div></div>
+    <div class="pi"><div class="pi-num">h</div><div class="pi-text">Duy trì vận hành hệ thống thiết bị quan trắc, giám sát, cảnh báo</div></div>
+    <div class="pi"><div class="pi-num">i</div><div class="pi-text">Xây dựng hệ thống CSDL đập, hồ chứa nước</div></div>
+    <div class="pi"><div class="pi-num">j</div><div class="pi-text">Lập hồ sơ đề nghị cấp phép khai thác nước</div></div>
+  </div>
+
+  <div class="note" style="margin-top:2px;">📌 <strong>Các chi phí đặc thù thực hiện sau khi được cơ quan thẩm quyền chấp thuận chủ trương hoặc giao nhiệm vụ bằng văn bản</strong>, từ nguồn thu cung cấp SP/DV TL. Các chi phí thường xuyên khác theo Điều 36 gồm 36 khoản (điện, nước, nhiên liệu, bảo trì, KHCN, phần mềm, phân tích nước, KTTV, bảo hiểm xe, thuê xe, khấu hao TSCĐ, tiền thuê đất, dịch vụ NH, đào tạo, phúc lợi NLĐ, quảng cáo, kiểm toán BCTC, v.v.)</div>
+
+  <div class="sh brn"><span class="sh-icon">⚖️</span><span class="sh-text">CHƯƠNG 10 — ĐIỀU KHOẢN THI HÀNH</span><span class="sh-art">Điều 37–38</span></div>
+
+  <div class="tr-list">
+    <div class="tr-item"><span class="tr-icon">📅</span><span>Hiệu lực từ <strong>ngày ký Quyết định (06/04/2026)</strong>. Bãi bỏ QĐ 41/2024, QĐ 49/2025, QĐ 178/2025, QĐ 201/2025.</span></div>
+    <div class="tr-item"><span class="tr-icon">💡</span><span><strong>Mức chi theo Quy chế là mức chi tối đa.</strong> BGĐ căn cứ kết quả SXKD, kinh phí hiện có để cân đối, trình Chủ tịch quyết định mức chi phù hợp từng năm.</span></div>
+    <div class="tr-item"><span class="tr-icon">🔄</span><span>Nội dung không quy định trong Quy chế → thực hiện theo pháp luật hiện hành. Khi pháp luật thay đổi → quy định pháp luật đương nhiên được áp dụng.</span></div>
+    <div class="tr-item"><span class="tr-icon">👤</span><span>Trưởng phòng TCHC chủ trì tổng hợp vướng mắc → báo cáo BGĐ → tham mưu Chủ tịch xem xét sửa đổi, bổ sung.</span></div>
+    <div class="tr-item"><span class="tr-icon">🔍</span><span>Trưởng Ban KSNB giúp Chủ tịch CT <strong>kiểm tra, giám sát</strong> thực hiện Quy chế.</span></div>
+  </div>
+
+  <div class="note">📎 <strong>Căn cứ pháp lý chính:</strong> TT 40/2017/TT-BTC (công tác phí, hội nghị) đã sửa đổi bởi TT 12/2025/TT-BTC · TT 20/2026/TT-BTC (thuế TNDN) · NĐ 320/2025/NĐ-CP (thuế TNDN) · NĐ 181/2025/NĐ-CP (TTKDTM) · QĐ 378/2016/QĐ-UBND Ninh Thuận (Quy chế tài chính CT)</div>
+
+</div><!-- end col 4 -->
+
+</div><!-- end body -->
+
+<div class="footer">
+  <span><strong>QĐ Ban hành Quy chế Chi tiêu nội bộ — Công ty TNHH MTV KTTL Ninh Thuận · Chủ tịch Công ty: Nguyễn Công Xưng · 06/04/2026</strong></span>
+  <span>Infographic phổ biến nội bộ — không thay thế văn bản gốc · 10 Chương · 38 Điều</span>
+</div>
+
+</div><!-- end page -->
+
+<!-- ZOOM MODAL -->
+<div id="zx-backdrop"></div>
+<div id="zx-modal">
+  <div id="zx-titlebar"><span id="zx-title"></span><button id="zx-close">✕</button></div>
+  <div id="zx-scroll"><div id="zx-inner"></div></div>
+  <div id="zx-zoombar">
+    <button class="zxb" id="zx-minus">－ Thu nhỏ</button>
+    <span id="zx-scale">100%</span>
+    <button class="zxb" id="zx-plus">＋ Phóng to</button>
+    <button class="zxb" id="zx-reset">⟳ Reset</button>
+  </div>
+</div>
+<div id="zx-hint">🔍 Click vào bảng / khối nội dung bất kỳ để phóng to</div>
+
+<script>
+(function(){
+  var backdrop=document.getElementById('zx-backdrop');
+  var modal=document.getElementById('zx-modal');
+  var titleEl=document.getElementById('zx-title');
+  var inner=document.getElementById('zx-inner');
+  var closeBtn=document.getElementById('zx-close');
+  var hint=document.getElementById('zx-hint');
+  var scaleEl=document.getElementById('zx-scale');
+  var scale=1;
+
+  document.querySelectorAll('.col > *').forEach(function(el){
+    if(el.classList.contains('sh')) return;
+    el.classList.add('zoomable');
+  });
+
+  function openModal(el){
+    var title=''; var prev=el.previousElementSibling;
+    while(prev){ if(prev.classList.contains('sh')){ var t=prev.querySelector('.sh-text'); if(t) title=t.textContent.trim(); break; } prev=prev.previousElementSibling; }
+    titleEl.textContent=title||'Chi tiết nội dung';
+    inner.innerHTML=''; var clone=el.cloneNode(true); clone.classList.remove('zoomable'); inner.appendChild(clone);
+    scale=1;
+    backdrop.style.display='block'; modal.style.display='flex'; document.body.style.overflow='hidden';
+    requestAnimationFrame(function(){
+      var isMobile=window.innerWidth<=600;
+      if(!isMobile){ var naturalW=inner.scrollWidth+56; var maxW=window.innerWidth*0.96; modal.style.width=Math.min(naturalW,maxW)+'px'; } else { modal.style.width=''; }
+      applyScale();
+    });
+  }
+
+  function closeModal(){ backdrop.style.display='none'; modal.style.display='none'; document.body.style.overflow=''; }
+
+  function applyScale(){
+    scaleEl.textContent=Math.round(scale*100)+'%';
+    inner.style.transform='scale('+scale+')'; inner.style.transformOrigin='top left';
+    if(inner.firstChild){ inner.style.width=(inner.firstChild.scrollWidth*scale)+'px'; inner.style.height=(inner.firstChild.scrollHeight*scale)+'px'; }
+  }
+
+  document.getElementById('zx-plus').addEventListener('click',function(){ scale=Math.min(4,+(scale+0.25).toFixed(2)); applyScale(); });
+  document.getElementById('zx-minus').addEventListener('click',function(){ scale=Math.max(0.4,+(scale-0.25).toFixed(2)); applyScale(); });
+  document.getElementById('zx-reset').addEventListener('click',function(){ scale=1; applyScale(); });
+
+  document.addEventListener('click',function(e){
+    if(modal.style.display==='flex'){ if(!modal.contains(e.target)) closeModal(); return; }
+    var t=e.target;
+    while(t&&t!==document.body){ if(t.classList&&t.classList.contains('zoomable')){ e.stopPropagation(); openModal(t); return; } t=t.parentElement; }
+  });
+
+  closeBtn.addEventListener('click',closeModal);
+  backdrop.addEventListener('click',closeModal);
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeModal(); });
+  setTimeout(function(){ hint.classList.add('hidden'); },4500);
+})();
+</script>
+</body>
+</html>
